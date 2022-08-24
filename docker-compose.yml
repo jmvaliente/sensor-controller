@@ -1,0 +1,13 @@
+version: '0.1'
+
+services:
+  websocket:
+    image: sensor-controller/websocket
+    build: ./services/websocket
+    environment:
+      - PORT=7001
+    volumes:
+      - ./services/websocket/src:/app/src
+      - /app/node_modules
+    ports:
+      - '7001:7001'
